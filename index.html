@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climbing Log</title>
+  <link rel="stylesheet" href="base.css"> <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="components.css"> <!-- Component Stylesheet -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+  <script src="app.js"></script> <!-- Javascript app.js -->
+</head>
+<body>
+  <header>
+    <h1>Climbing Log</h1>
+  </header>
+
+  <main>
+    <!-- User Input -->
+    <section class="log-form">
+      <h2>Log a New Route</h2>
+      <form id="routeForm">
+        <label for="gym">Climbing Gym:</label>
+        <input type="text" id="gym" name="gym" placeholder="Enter gym name" required>
+        
+        <label for="grade-buttons">Grade:</label>
+        <div class="grade-buttons">
+          <button type="button" class="grade-btn" data-grade="V0">V0</button>
+          <button type="button" class="grade-btn" data-grade="V1">V1</button>
+          <button type="button" class="grade-btn" data-grade="V2">V2</button>
+          <button type="button" class="grade-btn" data-grade="V3">V3</button>
+          <button type="button" class="grade-btn" data-grade="V4">V4</button>
+          <button type="button" class="grade-btn" data-grade="V5">V5</button>
+          <button type="button" class="grade-btn" data-grade="V6">V6</button>
+          <button type="button" class="grade-btn" data-grade="V7">V7</button>
+          <button type="button" class="grade-btn" data-grade="V8">V8</button>
+          <button type="button" class="grade-btn" data-grade="V9">V9</button>
+        </div>
+
+        <label for="attempts">Attempts:</label>
+        <input type="number" id="attempts" name="attempts" min="1" required>
+
+        <label for="sent">Sent?</label>
+        <select id="sent" name="sent" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes"></textarea>
+        
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        
+        <button type="submit" class="submit">Save Route</button>
+      </form>
+    </section>
+
+    <!-- Graphs -->
+    <section class="graph-section">
+      <h2>Climbs Completed by Grade</h2>
+      <canvas id="barChartYes"></canvas> 
+      <canvas id="barChartNo"></canvas> 
+    </section>
+
+    <!-- Logged Routes -->
+    <section class="log-history">
+      <h2>Logged Routes</h2>
+      <table id="routeTable">
+        <thead>
+          <tr>
+            <th>Climbing Gym</th>
+            <th>Grade</th>
+            <th>Attempts</th>
+            <th>Sent?</th>
+            <th>Notes</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody id="routeTableBody">
+          <!-- Table rows populate here-->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+  <section class="motivational-quote">
+    <p>"The best climber in the world is the one having the most fun." - Alex Lowe</p>
+  </section>
+  
+</body>
+</html>
